@@ -6,28 +6,19 @@ define(['../config', './tweet.mapper'], function (config, tweetMapper) {
 
         $.ajax({
             url: config.twitterSearchUrl + options.param,
-            crossDomain: true,
-            cache: false,
             dataType: 'JSONP',
-            contentType: "application/jsonp; charset=UTF-8",
-            success: function (json) {
-                // handleResult(json, row);
-                options.results(buildTweets(json));
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-
+            success: function (data) {
+                options.results(buildTweets(data));
             }
         });
 
-        function buildTweets (json) {
-            console.log("json", json);
+        function buildTweets (data) {
             var tweets = [];
-            $.each(json.results, function (index, data) {
-                tweets.push(tweetMapper.create(data));
+            $.each(data.results, function (index, item) {
+                tweets.push(tweetMapper.create(item));
             });
             return tweets;
         }
-
      };
 
     return {
