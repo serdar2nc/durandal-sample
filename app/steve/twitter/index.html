@@ -1,19 +1,23 @@
-<h2 data-bind="html: title"></h2>
+<div id="tweets-view">
 
-<div class="input-append">
-    <input class="input-medium" type="text" data-bind="value: searchString">
-    <button class="btn btn-info" type="button" data-bind="click: search">Search</button>
+    <h2 data-bind="html: title"></h2>
+
+    <div class="input-append">
+        <input class="input-medium" type="text" data-bind="value: searchString">
+        <button class="btn btn-info" type="button" data-bind="click: search">Search</button>
+    </div>
+
+    <ul class="tweets-list unstyled"
+        data-bind="template: {name: 'tmplTweets', foreach: tweets}">
+    </ul>
+
+    <script type="text/html" id="tmplTweets">
+        <li>
+            <img data-bind="attr: { src: profileImageUrl }">
+            <span data-bind="text: fromUser" class="label label-info"></span>
+            <span data-bind="html: formattedCreatedAt()" class="label"></span>
+            <span data-bind="html: text"></span>
+        </li>
+    </script>
+
 </div>
-
-<ul class="tweets-list unstyled"
-    data-bind="template: {name: 'tmplTweets', foreach: tweets}">
-</ul>
-
-<script type="text/html" id="tmplTweets">
-    <li>
-        <img data-bind="attr: { src: profileImageUrl }">
-        <span data-bind="text: fromUser" class="label label-info"></span>
-        <span data-bind="html: formattedCreatedAt()" class="label"></span>
-        <span data-bind="html: text"></span>
-    </li>
-</script>

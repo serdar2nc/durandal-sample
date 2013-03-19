@@ -14,3 +14,13 @@ body {
 .loader.active {
   visibility: visible;
 }
+#tweets-view .tweets-list {
+  margin-top: 30px;
+}
+#tweets-view .tweets-list img {
+  height: 24px;
+  width: 24px;
+}
+#tweets-view .tweets-list li {
+  margin-bottom: 6px;
+}
