@@ -1,27 +1,38 @@
-define(['../config', './tweet.mapper'], function (config, tweetMapper) {
+var modules = [
+    'durandal/system',
+    'durandal/http',
+    '../config',
+    './tweet.mapper'
+];
+
+define(modules, function (system, http, config, tweetMapper) {
 
     'use strict';
 
     var getTweets = function (options) {
 
-        $.ajax({
-            url: config.twitterSearchUrl + options.param,
-            dataType: 'JSONP',
-            success: function (data) {
-                options.results(buildTweets(data));
-            }
-        });
-     };
+        system.log('search', options.param);
+
+        http.jsonp(config.twitterSearchUrl, { q: options.param })
+            .done(function (data) {
+                options.results(buildTweets(data.results));
+            });
+    };
 
     return {
         getTweets: getTweets
     };
 
-    function buildTweets (data) {
+    function buildTweets(results) {
+
         var tweets = [];
-        $.each(data.results, function (index, item) {
+        $.each(results, function (index, item) {
+            system.log("item", item);
             tweets.push(tweetMapper.create(item));
         });
+
+        system.log('tweets', tweets);
+
         return tweets;
     }
 
