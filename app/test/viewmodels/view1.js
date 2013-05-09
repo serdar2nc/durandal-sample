@@ -10,9 +10,7 @@ define(['./counter-parent'], function (CounterVM) {
 
     return {
         counterVM: counterVM,
-        isRunning: counterVM.isRunning,
-        activate: activate,
-        counter: counterVM.counter
+        activate: activate
     };
 
 });

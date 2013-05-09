@@ -1,4 +1,7 @@
-<div class="well expandy" style="display: none">
-Counter is running: <span data-bind="text: isRunning"></span><br>
-Count is: <span data-bind="text: counter"></span>
+<div class="well expandy" style="display: none" data-bind="with: counterVM">
+
+    Counter is running: <span data-bind="text: isRunning"></span><br>
+
+    Count is: <span data-bind="text: counter"></span>
+
 </div>
