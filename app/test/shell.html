@@ -6,8 +6,25 @@
 
             <ul class="unstyled">
                 <li><a href="#/test/home">home</a></li>
-                <li><a href="#/test/view1">view1</a></li>
-                <li><a href="#/test/view2">view2</a></li>
+                <li>
+                    <a href="#/test/view1">view1</a>
+                    <!-- ko compose: {
+                        view: 'test/views/side-nav-status',
+                        model: 'test/viewmodels/view1',
+                        activate: false
+                    } -->
+                    <!-- /ko -->
+                </li>
+
+                <li>
+                    <a href="#/test/view2">view2</a>
+                    <!-- ko compose: {
+                        view: 'test/views/side-nav-status',
+                        model: 'test/viewmodels/view2',
+                        activate: false
+                    } -->
+                    <!-- /ko -->
+                </li>
             </ul>
 
         </div>
