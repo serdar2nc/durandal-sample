@@ -8,10 +8,10 @@
     </div>
 
     <ul class="tweets-list unstyled"
-        data-bind="template: {name: 'tmplTweets', foreach: tweets}">
+        data-bind="template: { name: 'tmpl-tweets', foreach: tweets }">
     </ul>
 
-    <script type="text/html" id="tmplTweets">
+    <script type="text/html" id="tmpl-tweets">
         <li>
             <img data-bind="attr: { src: profileImageUrl }">
             <span data-bind="text: fromUser" class="label label-info"></span>

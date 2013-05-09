@@ -1,6 +1,6 @@
 define(function () {
 
-    var twitterSearchUrl = 'http://search.twitter.com/search.json?q=';
+    var twitterSearchUrl = 'https://search.twitter.com/search.json';
 
     return {
         twitterSearchUrl: twitterSearchUrl
