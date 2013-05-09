@@ -1,4 +1,4 @@
-define(function () {
+define(['durandal/plugins/router'], function (router) {
 
     return CounterView = function (args) {
 

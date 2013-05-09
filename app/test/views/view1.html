@@ -1,11 +1,8 @@
-<div data-bind="with: counterVM">
-
-    <h1>View 1</h1>
-
-    <p>Counter 1 = <span data-bind="text: counter"></span></p>
-
-    <button data-bind="click: startCounter, disable: isRunning">start</button>
-
-    <button data-bind="click: stopCounter, enable: isRunning">stop</button>
-
+<div>
+<!-- ko compose: {
+           view: 'test/views/view-fragment',
+           model: 'test/viewmodels/view1',
+           activate: false
+       } -->
+<!-- /ko -->
 </div>

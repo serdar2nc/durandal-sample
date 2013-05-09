@@ -9,8 +9,9 @@ define(['durandal/app',
     'durandal/system',
     'durandal/viewLocator',
     'durandal/plugins/router',
+    'test/bindings/ko.bindings',
     'moment'],
-    function (app, system, router, viewLocator) {
+    function (app, system, viewLocator, router) {
 
         system.debug(true);
 

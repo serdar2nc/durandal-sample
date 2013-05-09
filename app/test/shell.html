@@ -5,9 +5,9 @@
         <div class="span4">
 
             <ul class="unstyled">
-                <li><a href="#/test/home">home</a></li>
+                <li><a href="#/test/home" data-bind="expandy: null">home</a></li>
                 <li>
-                    <a href="#/test/view1">view1</a>
+                    <a href="#/test/view1" data-bind="expandy: null">view1</a>
                     <!-- ko compose: {
                         view: 'test/views/side-nav-status',
                         model: 'test/viewmodels/view1',
@@ -17,7 +17,7 @@
                 </li>
 
                 <li>
-                    <a href="#/test/view2">view2</a>
+                    <a href="#/test/view2" data-bind="expandy: null">view2</a>
                     <!-- ko compose: {
                         view: 'test/views/side-nav-status',
                         model: 'test/viewmodels/view2',
@@ -30,6 +30,9 @@
         </div>
 
         <div class="span8" id="maincontainer">
+
+            <h1 data-bind="text: router.activeRoute().name"></h1>
+
             <!--ko compose: {
                 model: router.activeItem, //wiring the router
                 afterCompose: router.afterCompose, //wiring the router
